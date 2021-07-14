@@ -1,7 +1,7 @@
-# splus-learning
+# SPLUS-LEARNING (ONLINE EXAMINATION)
 In this website you can do exam of any topic. Topics and question answer are controlled by Admin.
 
-#USER PANEL
+# USER PANEL
 1. Main Home Page.
 ![image](https://user-images.githubusercontent.com/57853305/125642874-1aa75178-5444-4965-98c0-4d1f8a204af7.png)
 
