@@ -1,0 +1,119 @@
++--------------------------------------------------------+
+|			Query				 |
++--------------------------------------------------------+
+[+]User create
+	create table user(
+        id int primary key auto_increment,
+        fname varchar(50),
+        lname varchar(50),
+        country_code varchar(5),
+        mobile      varchar(12),
+        email       varchar(100) UNIQUE,
+        password    varchar(200),
+        account_type varchar(10) DEFAULT "user",
+        status varchar(10) DEFAULT "active",
+        c_time TIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        c_date DATE NOT NULL DEFAULT CURRENT_TIMESTAMP);
+
+        ------------------- Inserting admin -------------------
+       insert into user(fname,lname,country_code,mobile,email,password,account_type) 
+       values ('satya','mishra','+91','9120829055','satyamishra559@gmail.com','$2y$10$c5WccuNlr0aDWKNsuQs78uiXeimxFZ1e0msMGxwJkYaUOKNp.X5t2','admin');
+
+[+]Topic table
+	create table topics(
+	topic_id int primary key auto_increment,
+	name varchar(50),
+	discription varchar(200),
+	tag varchar(200),
+        status varchar(10) DEFAULT 'active',
+        c_time TIME DEFAULT CURRENT_TIMESTAMP,
+        c_date DATE DEFAULT CURRENT_TIMESTAMP);
+
+	create table questions(
+	question_id int primary key auto_increment,
+	question varchar(200),
+	topic_id int,
+	foreign key(topic_id) references topics(topic_id));
+
+	create table options(
+	option_id int primary key auto_increment,
+	opt1 varchar(100),
+	opt2 varchar(100),
+	opt3 varchar(100),
+	opt4 varchar(100),
+	question_id int,
+	foreign key(question_id) references questions(question_id));
+
+	create table answers(
+	answer_id int primary key auto_increment,
+	answer varchar(10),
+	question_id int,
+	foreign key(question_id) references questions(question_id));
+
+	create table ranks(
+	percentage varchar(100),
+	user_id int,
+	foreign key(user_id) references user(id));
+
+	create table review(
+        id int, 
+        rating varchar(50),
+        review varchar(200),
+        likes varchar(50), 
+        dislike varchar(50), 
+        heart varchar(50),
+        foreign key review(id) references user(id));
+
+	create table visiter(
+        num_visiter varchar(254));
+
+        create table exam_status(
+        exam_id int primary key auto_increment,
+        exam_status varchar(50) default 'start',
+        topic_id int,
+        user_id int,
+        foreign key(user_id) references user(id));
+
+	create table question_history(
+        user_id int,
+        t_id int,
+        q_id int,
+        answer varchar(10),
+        c_time TIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        c_date DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        foreign key (t_id) references topics(topic_id));
+
+        create table exam_result_manage(
+        question_solve int,
+        true_answer int,
+        false_answer int,
+        perentage_gain int);
+	#data inserting required
+        insert into exam_result_manage values (0,0,0,0);
+
++--------------------------------------------------------+
+|			Admin&User			 |
++--------------------------------------------------------+
+[+]SPlus_Learning
+	
+	[+]admin
+		[+]id		int primary key auto_increment
+		[+]fname	varchar(50)
+		[+]lname	varchar(50)
+		[+]email	varchar(50) UNIQUE
+		[+]password	varchar(255)
+		[+]addhar	varchar(20) UNIQUE
+		[+]address	varchar(50)
+		[+]pin		varchar(4)
+
+	[+]user
+		[+]id		int primary key auto_increment
+		[+]fname	varchar(50)
+		[+]lname	varchar(50)
+		[+]email	varchar(50)	UNIQUE
+		[+]password	varchar(255)
+		[+]addhar	varchar(20)	UNIQUE
+		[+]address	varchar(50)
+		[+]pin		varchar(50)
+	
+	
