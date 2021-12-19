@@ -59,7 +59,11 @@ LIVE AT : https://tinyurl.com/3sxpkkvr
 8. User info - Admins change and see data too.
 ![image](https://user-images.githubusercontent.com/57853305/125646395-19dc3bb7-30c0-4739-9ddc-cd9ff213fca4.png)
 
-This Project made for Online Examination, Actually when i was doing A-Level from NIELIT-Gorakhpur then i face some issues. like when my test or exam came then all teacher say to all candidate. "All of you please download last 10 year previous year paper and solve them yourself", so my all buddies do download and print on the hard copy too. but in the my case, You know that was not simple stuff for me. i was not have enough money for priting hard copy of last 10 year previous paper. People also say you have soft copy too, so what is need of hard copy? So, Guys all of you know very well, hard copy is best as compaire to soft copy. So, Guys I realiesed that, if i make some website which have lots of feature like, Doing Exam,manupulating Question and Answer and check ranking of all student. Then i start this project and finally, that is front of you.
+This Project made for Online Examination, Actually when i was doing A-Level from NIELIT-Gorakhpur that time i was faced some issues. like when my test/exam came then all teacher say to all candidate. "All of you please download last 10 year previous year paper and solve them", so my all buddies do download and print on the hard copy too. but in the my case, You know that was not simple stuff for me. i was not have enough money for priting hard copy of last 10 year previous paper. People also say you have soft copy too, so what is need of hard copy? So, Guys all of you know very well, hard copy is best as compaire to soft copy. So, Guys I realiesed that, if i make some website which have lots of feature like, Doing Exam,manupulating Question and Answer and check ranking of all student. Then i start this project and finally, that is front of you.
+
+Thank Uhhh.
+For better experience Signup @ https://dipankarsolution.tech/splus/php/login-signup/login-signup.php?signup
+
 
 
 
