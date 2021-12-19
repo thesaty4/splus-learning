@@ -1,5 +1,6 @@
 # Splus-Learing (Online Examination) 
 In this website you can do exam of any topic. Topics and question answer are controlled by Admin.
+
 LIVE AT : https://tinyurl.com/3sxpkkvr
 
 # USER PANEL
@@ -62,6 +63,7 @@ LIVE AT : https://tinyurl.com/3sxpkkvr
 This Project made for Online Examination, Actually when i was doing A-Level from NIELIT-Gorakhpur that time i was faced some issues. like when my test/exam came then all teacher say to all candidate. "All of you please download last 10 year previous year paper and solve them", so my all buddies do download and print on the hard copy too. but in the my case, You know that was not simple stuff for me. i was not have enough money for priting hard copy of last 10 year previous paper. People also say you have soft copy too, so what is need of hard copy? So, Guys all of you know very well, hard copy is best as compaire to soft copy. So, Guys I realiesed that, if i make some website which have lots of feature like, Doing Exam,manupulating Question and Answer and check ranking of all student. Then i start this project and finally, that is front of you.
 
 Thank Uhhh.
+
 For better experience Signup @ https://dipankarsolution.tech/splus/php/login-signup/login-signup.php?signup
 
 
