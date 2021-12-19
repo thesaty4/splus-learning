@@ -1,6 +1,6 @@
 # SPLUS-LEARNING (ONLINE EXAMINATION) 
 In this website you can do exam of any topic. Topics and question answer are controlled by Admin.
-LIVE AT : https://tinyurl.com/d3e6c58m
+LIVE AT : https://tinyurl.com/3sxpkkvr
 
 # USER PANEL
 1. Main Home Page.
