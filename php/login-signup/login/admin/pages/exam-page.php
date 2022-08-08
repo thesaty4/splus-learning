@@ -5,9 +5,12 @@ $conn = db_conn();
     // Error show 
     function errorShow($msg){
         if($_SESSION['login']['account_type'] == 'admin'){
-            header("location:../main.php?error=".$msg."");
+            echo "<script>window.location.href='../main.php?error=".$msg."';</script>";
+            
+            // header("location:../main.php?error=".$msg."");
         }else if($_SESSION['login']['account_type'] == 'user'){
-            header("location:../../user/main.php?error=".$msg."");
+            echo "<script>window.location.href='../../user/main.php?error=".$msg."';</script>";
+            // header("location:../../user/main.php?error=".$msg."");
         }
     }
 
@@ -356,5 +359,9 @@ function examStart($topic_id,$user_id,$status){?>
             examStart($topic_id,$user_id,$status);
         }
         if($status == 'start'){examStart($topic_id,$user_id,$status);}
-}else{ header("location:../../../../../index.php?error=Unautorized user!");}?>
+}else{ 
+    echo "<script>window.location.href='../../../../../index.php?error=Unautorized user!';</script>";
+    
+    // header("location:../../../../../index.php?error=Unautorized user!");
+}?>
 

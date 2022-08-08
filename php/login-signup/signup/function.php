@@ -33,13 +33,16 @@ function show_error( $arg ) {
         'stmt_error'    => 'Opps something wen\'t wrong',
         'stmt_not_execute' => 'Error: Email or mobile already exists..'
     ];
-    header( 'location:../login-signup.php?error='.$error[$arg] );
+    echo "<script>window.location.href='../login-signup.php?error=".$error[$arg]."';</script>";
+    
+    // header( 'location:../login-signup.php?error='.$error[$arg] );
 }
 
 function show_success( $arg ) {
     $success = [
         'signup_successfull' => 'You have Successfully Registerd'
     ];
-    header( 'location:../login-signup.php?success='.$success[$arg] );
+    echo "<script>window.location.href='../login-signup.php?success=".$success[$arg]."';</script>";
+    // header( 'location:../login-signup.php?success='.$success[$arg] );
 }
 ?>

@@ -1,7 +1,9 @@
 <?php
 if(isset($_POST['showQNA'])){
     function showError(){
-        header("location:main.php?warning=ERROR: Unexpected user");
+    echo "<script>window.location.href='main.php?warning=ERROR: Unexpected user';</script>";
+
+        // header("location:main.php?warning=ERROR: Unexpected user");
     }
     // print_r($_POST);
     $conn = db_conn();
@@ -42,6 +44,8 @@ if(isset($_POST['showQNA'])){
     echo "</form>";
 
 }else{
-    header("location:main.php?warning=ERROR: Unexpected user!");
+    echo "<script>window.location.href='main.php?warning=ERROR: Unexpected user!';</script>";
+
+    // header("location:main.php?warning=ERROR: Unexpected user!");
 }
 ?>

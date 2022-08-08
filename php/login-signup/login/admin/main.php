@@ -298,6 +298,8 @@ if(isset($_POST['exam_status'])){
 </html>
 <?php
 }else{
-    header("location:../../../../index.php");
+    echo "<script>window.location.href='../../../../index.php';</script>";
+    
+    // header("location:../../../../index.php");
 }
 ?>

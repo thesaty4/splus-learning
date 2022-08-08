@@ -14,28 +14,35 @@ if(isset($_POST['option-edit'])){
     $sql = "UPDATE `options` SET `opt1` = ? , `opt2` = ? , `opt3` = ? , `opt4` = ? WHERE `question_id` = ?;";
     $stmt = mysqli_prepare($conn,$sql);
     if(!$stmt){
-        header("location:../main.php?error=Error : Somthing wrong!");
+        echo "<script>window.location.href='../main.php?error=Error : Somthing wrong!';</script>";
+        
+        // header("location:../main.php?error=Error : Somthing wrong!");
     }
     mysqli_stmt_bind_param($stmt,'sssss',$opt1,$opt2,$opt3,$opt4,$q_id);
     $rslt = mysqli_stmt_execute($stmt);
     if(!$rslt){
-        header("location:../main.php?error=Error : Somthing wrong!");
+        echo "<script>window.location.href='../main.php?error=Error : Somthing wrong!';</script>";
+        // header("location:../main.php?error=Error : Somthing wrong!");
     }
     $sql = "UPDATE `answers` SET `answer` = ? WHERE `question_id` = ?;";
     $stmt = mysqli_prepare($conn,$sql);
     if(!$stmt){
-        header("location:../main.php?error=Error : Somthing wrong!");
+        echo "<script>window.location.href='../main.php?error=Error : Somthing wrong!';</script>";
+        // header("location:../main.php?error=Error : Somthing wrong!");
     }
     mysqli_stmt_bind_param($stmt,'ss',$answer,$q_id);
     $rslt = mysqli_stmt_execute($stmt);
     if(!$rslt){
-        header("location:../main.php?error=Error : Somthing wrong!");
+        echo "<script>window.location.href='../main.php?error=Error : Somthing wrong!';</script>";
+        // header("location:../main.php?error=Error : Somthing wrong!");
     }
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
-
-    header("location:../main.php?success=Options updated successfull!");
+    
+    echo "<script>window.location.href='../main.php?success=Options updated successfull!';</script>";
+    // header("location:../main.php?success=Options updated successfull!");
 }else{
-    header("location:../main.php?error=Error : Unautorized ! ");
+    echo "<script>window.location.href='../main.php?error=Error : Unautorized !';</script>";
+    // header("location:../main.php?error=Error : Unautorized ! ");
 }
 ?>

@@ -36,13 +36,17 @@ function show_error( $arg ) {
         'stmt_error'    => 'Opps something wen\'t wrong',
         'stmt_not_execute' => 'Error: Email or mobile already exists..'
     ];
-    header( 'location:../main.php?error='.$error[$arg] );
+    echo "<script>window.location.href='../main.php?".$error[$arg]."';</script>";
+
+    // header( 'location:../main.php?error='.$error[$arg] );
 }
 
 function show_success( $arg ) {
     $success = [
         'signup_successfull' => 'Admin account added successfull!'
     ];
-    header( 'location:../main.php?success='.$success[$arg] );
+    echo "<script>window.location.href='../main.php?success=".$success[$arg]."';</script>";
+
+    // header( 'location:../main.php?success='.$success[$arg] );
 }
 ?>

@@ -3,7 +3,9 @@ if(isset($_POST['add-question']) or isset($_POST['add-new-question'])){
     function validData($arg){
         foreach ($arg as $key => $value) {
             if($value == ''){
-                header("location:../main?warning=All field required!");
+                echo "<script>window.location.href='../main?warning=All field required!';</script>";
+
+                // header("location:../main?warning=All field required!");
             }
         }
     }
@@ -68,10 +70,17 @@ if(isset($_POST['add-question']) or isset($_POST['add-new-question'])){
                     // Topic Insert
             $sql = "INSERT INTO `topics` (`name`,`discription`,`tag`) VALUES (?,?,?);";
             $stmt = mysqli_prepare($conn,$sql);
-            if(!$stmt){ header("location:../main.php?error=Opps! Somthing wrong.");}
+            if(!$stmt){ 
+                echo "<script>window.location.href='../main.php?error=Opps! Somthing wrong.';</script>";
+                // header("location:../main.php?error=Opps! Somthing wrong.");
+            }
             mysqli_stmt_bind_param($stmt,'sss',$t_name,$dis,$tag);
             $stmt_result = mysqli_stmt_execute($stmt);
-            if($stmt_result){ header("location:../main.php?error=Somthing wrong from server!");}
+            if($stmt_result){ 
+                echo "<script>window.location.href='../main.php?error=Somthing wrong from server!';</script>";
+                
+                // header("location:../main.php?error=Somthing wrong from server!");
+            }
             mysqli_stmt_close($stmt);
 
 
@@ -79,7 +88,11 @@ if(isset($_POST['add-question']) or isset($_POST['add-new-question'])){
             // // topic id fetching section
             $sql = "SELECT `topic_id` FROM `topics`";
             $obj = mysqli_query($conn,$sql);
-            if(!$obj){header("location:../main.php?error=Somthing wrong from server!");}
+            if(!$obj){
+                echo "<script>window.location.href='../main.php?error=Somthing wrong from server!';</script>";
+
+                // header("location:../main.php?error=Somthing wrong from server!");
+            }
             $number_of_rows = mysqli_num_rows($obj);
             $counter = 1;
             while($rows = mysqli_fetch_assoc($obj)){
@@ -101,16 +114,26 @@ if(isset($_POST['add-question']) or isset($_POST['add-new-question'])){
             // Inserting QUestion 
             $sql = "INSERT INTO `questions` (`question`,`topic_id`) VALUES (?,?);";
             $stmt = mysqli_prepare($conn,$sql);
-            if(!$stmt){ header("location:../main.php?error=Opps! Somthing wrong.");}
+            if(!$stmt){ 
+                echo "<script>window.location.href='../main.php?error=Opps! Somthing wrong.';</script>";
+                
+                // header("location:../main.php?error=Opps! Somthing wrong.");
+            }
             mysqli_stmt_bind_param($stmt,'si',$arg[$i]['q'.$i],$t_id);
             $stmt_result = mysqli_stmt_execute($stmt);
-            if($stmt_result){ header("location:../main.php?error=Somthing wrong from server!");}
+            if($stmt_result){ 
+                echo "<script>window.location.href='../main.php?error=Somthing wrong from server!';</script>";
+                // header("location:../main.php?error=Somthing wrong from server!");
+            }
             mysqli_stmt_close($stmt);
 
             //Fetching Question id
             $sql = "SELECT `question_id` FROM `questions`";
             $obj = mysqli_query($conn,$sql);
-            if(!$obj){header("location:../main.php?error=Somthing wrong from server!");}
+            if(!$obj){
+                echo "<script>window.location.href='../main.php?error=Somthing wrong from server!';</script>";
+                // header("location:../main.php?error=Somthing wrong from server!");
+            }
             $counter = 1;
             $number_of_rows = mysqli_num_rows($obj);
             while($rows = mysqli_fetch_assoc($obj)){
@@ -119,27 +142,40 @@ if(isset($_POST['add-question']) or isset($_POST['add-new-question'])){
                 }
                 $counter += 1;
             }
-
-        //     // Inserting Options
+            
+            //     // Inserting Options
             $sql = "INSERT INTO `options` (`opt1`,`opt2`,`opt3`,`opt4`,`question_id`) VALUES (?,?,?,?,?);";
             $stmt = mysqli_prepare($conn,$sql);
-            if(!$stmt){ header("location:../main.php?error=Opps! Somthing wrong.");}
+            if(!$stmt){ 
+                echo "<script>window.location.href='../main.php?error=Opps! Somthing wrong.';</script>";
+                // header("location:../main.php?error=Opps! Somthing wrong.");
+            }
             mysqli_stmt_bind_param($stmt,'ssssi',$arg[$i]['o1'.$i],$arg[$i]['o2'.$i],$arg[$i]['o3'.$i],$arg[$i]['o4'.$i],$q_id);
             $stmt_result = mysqli_stmt_execute($stmt);
-            if($stmt_result){ header("location:../main.php?error=Somthing wrong from server!");}
+            if($stmt_result){ 
+                echo "<script>window.location.href='../main.php?error=Somthing wrong from server!';</script>";
+                // header("location:../main.php?error=Somthing wrong from server!");
+            }
             mysqli_stmt_close($stmt);
-
-             // Inserting answer
-             $sql = "INSERT INTO `answers` (`answer`,`question_id`) VALUES (?,?);";
-             $stmt = mysqli_prepare($conn,$sql);
-             if(!$stmt){ header("location:../main.php?error=Opps! Somthing wrong.");}
+            
+            // Inserting answer
+            $sql = "INSERT INTO `answers` (`answer`,`question_id`) VALUES (?,?);";
+            $stmt = mysqli_prepare($conn,$sql);
+            if(!$stmt){ 
+                 echo "<script>window.location.href='../main.php?error=Somthing wrong from server!';</script>";
+                 // header("location:../main.php?error=Opps! Somthing wrong.");
+                }
              mysqli_stmt_bind_param($stmt,'si',$arg[$i]['answer'.$i],$q_id);
              $stmt_result = mysqli_stmt_execute($stmt);
-             if($stmt_result){ header("location:../main.php?error=Somthing wrong from server!");}
+             if($stmt_result){ 
+                 echo "<script>window.location.href='../main.php?error=Somthing wrong from server!';</script>";
+                 // header("location:../main.php?error=Somthing wrong from server!");
+                }
              mysqli_stmt_close($stmt);
-        }
-
-       header("location:../main.php?success=".$qnaNumber." Question successfully added!");
+            }
+            
+            echo "<script>window.location.href='../main.php?success=".$qnaNumber." Question successfully added!';</script>";
+    //    header("location:../main.php?success=".$qnaNumber." Question successfully added!");
     }
 
 

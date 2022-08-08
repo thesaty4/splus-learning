@@ -4,7 +4,9 @@ if ( isset( $_POST['signup-admin'] ) ) {
     include( 'function.php' );
     if(isset($_SESSION['otp'])){
         if($_SESSION['otp'] != $_POST['otp']){
-            header("location:../main.php?error=Opps invalid OTP, please enter valid otp.");
+            echo "<script>window.location.href='../main.php?error=Opps invalid OTP, please enter valid otp.';</script>";
+
+            // header("location:../main.php?error=Opps invalid OTP, please enter valid otp.");
         }
     }
     $status = data_validate( $_POST );

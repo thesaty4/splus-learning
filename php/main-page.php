@@ -7,7 +7,9 @@ if(isset($_POST['review-delete'])){
     mysqli_stmt_bind_param($stmt,'i',$_POST['id']);
     mysqli_stmt_execute($stmt);
     mysqli_close($conn);
-    header("location:../index.php?success=Your Review,Like or Dislike, heart are deleted!#review");
+    echo "<script>window.location.href='../index.php?success=Your Review,Like or Dislike, heart are deleted!#review';</script>";
+
+    // header("location:../index.php?success=Your Review,Like or Dislike, heart are deleted!#review");
 
 }else if(isset($_POST['edit-review'])){
     include("../include/database_connection.php");
@@ -22,12 +24,16 @@ if(isset($_POST['review-delete'])){
     mysqli_stmt_bind_param($stmt,'si',$review,$id);
     mysqli_stmt_execute($stmt);
     mysqli_close($conn);
-    header("location:../index.php?success=Review Updated successfull!#review");
+    echo "<script>window.location.href='../index.php?success=Review Updated successfull!#review';</script>";
+
+    // header("location:../index.php?success=Review Updated successfull!#review");
 
     // echo "<pre>";
     //     print_r($_POST);
     // echo "</pre>";
 }else{
-    header("location:../index.php?error=You can't access this page#review");
+    echo "<script>window.location.href='../index.php?error=You can't access this page#review';</script>";
+
+    // header("location:../index.php?error=You can't access this page#review");
 }
 ?>

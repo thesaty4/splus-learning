@@ -29,14 +29,18 @@ function show_error($arg){
         'invalid_email'  => 'Invalid email, please enter valid email!',
         'account_deactive'  => 'Opps! This account Deactivated'
     ];
-    header("location:../../login-signup.php?warning=".$error[$arg]);
+    echo "<script>window.location.href='../../login-signup.php?warning=".$error[$arg]."';</script>";
+
+    // header("location:../../login-signup.php?warning=".$error[$arg]);
 }
 
 function show_success($arg){
     $success = [
         
     ];
-    header("location:../../login-signup.php?warning=".$success[$arg]);
+    echo "<script>window.location.href='../../login-signup.php?warning=".$success[$arg]."';</script>";
+
+    // header("location:../../login-signup.php?warning=".$success[$arg]);
 }
 
 

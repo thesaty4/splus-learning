@@ -9,9 +9,13 @@ session_start();
         $messages = $message;
         $headers  = 'From: splus-learning.com';
         if(mail($to,$subject,$messages,$headers)){
-           header("location:../index.php?success=Message sent successfull!");
+           echo "<script>window.location.href='../index.php?success=Message sent successfull!';</script>";
+
+        //    header("location:../index.php?success=Message sent successfull!");
         }else{
-            header("location:../index.php?error=Sorry: Email sending fail..!");
+           echo "<script>window.location.href='../index.php?error=Sorry: Email sending fail..!';</script>";
+
+            // header("location:../index.php?error=Sorry: Email sending fail..!");
         }
     }
 

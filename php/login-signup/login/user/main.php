@@ -160,7 +160,9 @@ if(isset($_GET['profile']) || isset($_POST['profile_update']) || isset($_GET['pa
 </html>
 <?php
 }else{
-    header("location:../../../../index.php");
+    echo "<script>window.location.href='../../../../index.php';</script>";
+
+    // header("location:../../../../index.php");
 }
 ?>
 
