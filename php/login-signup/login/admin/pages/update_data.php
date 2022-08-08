@@ -5,7 +5,9 @@ if(isset($_POST['topic_update'])){
     echo "</pre>";
     foreach ($_POST as $key => $value) {
         if($value == ''){
-            header("location:../main.php?warning= All field required!");
+            echo "<script>window.location.href='../main.php?warning= All field required!';</script>";
+
+            // header("location:../main.php?warning= All field required!");
         }
     }
     include("../../../../../include/database_connection.php");
@@ -18,13 +20,19 @@ if(isset($_POST['topic_update'])){
     $status = mysqli_query($conn,$sql);
     $stmt = mysqli_prepare($conn,$sql);
     if(!$stmt){
-        header("location:../main.php?error=Opps! somthing wrong..");
+        echo "<script>window.location.href='../main.php?error=Opps! somthing wrong..';</script>";
+
+        // header("location:../main.php?error=Opps! somthing wrong..");
     }
     mysqli_stmt_bind_param($stmt,'si',$topic_name,$topic_id);
     $status = mysqli_stmt_execute($stmt);
     if(!$status){
-        header("location:../main.php?error=Opps! somthing wrong..");
+        echo "<script>window.location.href='../main.php?error=Opps! somthing wrong..';</script>";
+
+        // header("location:../main.php?error=Opps! somthing wrong..");
     }
-    header("location:../main.php?success=Topic Updated..!");
+    echo "<script>window.location.href='../main.php?success=Topic Updated..!';</script>";
+
+    // header("location:../main.php?success=Topic Updated..!");
 }
 ?>

@@ -7,8 +7,11 @@ if(isset($_SESSION['login'])){
         setcookie(session_name(),time()-15, "/");
     }
     session_destroy();
-    header("location:../index.php?success=You Have succesfully LogOut!");
+    echo "<script>window.location.href='../index.php?success=You Have succesfully LogOut!';</script>";
+    
+    // header("location:../index.php?success=You Have succesfully LogOut!");
 }else{
-    header("location:../index.php?warning=Something wrong during logout!");
+    echo "<script>window.location.href='../index.php?warning=Something wrong during logout!';</script>";
+    // header("location:../index.php?warning=Something wrong during logout!");
 }
 ?>

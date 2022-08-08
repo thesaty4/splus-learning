@@ -5,12 +5,15 @@ $query = "SELECT * FROM `topics` WHERE `topic_id`='$topic_id'";
 $num_of_que = "SELECT `question_id` FROM `questions`;";
 $number_of_rows_obj = mysqli_query($conn,$num_of_que);
 if(!$number_of_rows_obj){
-    header("location:main.php?error=Opps! somthing wrong");
+    echo "<script>window.location.href='main.php?error=Opps! somthing wrong';</script>";
+    
+    // header("location:main.php?error=Opps! somthing wrong");
 }
 $n_o_q = mysqli_num_rows($number_of_rows_obj);
 $status = mysqli_query($conn,$query);
 if(!$status){
-    header("location:main.php?error=Opps! somthing wrong");
+    echo "<script>window.location.href='main.php?error=Opps! somthing wrong';</script>";
+    // header("location:main.php?error=Opps! somthing wrong");
 }
 echo "<div class='row p-2 font-cambria'>
         <div class='col-12 d-flex mb-md-4'>

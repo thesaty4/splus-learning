@@ -1,6 +1,8 @@
 <?php session_start();
 if ( isset( $_SESSION['login'] ) ) {
-    header( 'location:./login/'.$_SESSION['login']['account_type'].'/main.php' );
+    echo "<script>window.location.href='./login/'".$_SESSION['login']['account_type']."/main.php';</script>";
+
+    // header( 'location:./login/'.$_SESSION['login']['account_type'].'/main.php' );
 } else {
     ?>
     <!DOCTYPE html>

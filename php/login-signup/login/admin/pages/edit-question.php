@@ -13,9 +13,12 @@
         $sql = "UPDATE `questions` SET `question` = '$question' WHERE `question_id` = '$q_id';";
         $stmt = mysqli_query($conn,$sql);
         if(!$stmt){
-            header("location:../main.php?error=Something wrong!");
+            echo "<script>window.location.href='../main.php?error=Something wrong!';</script>";
+            
+            // header("location:../main.php?error=Something wrong!");
         }
-        header("location:../main.php?success=1 Question updated!");
+        echo "<script>window.location.href='../main.php?success=1 Question updated!';</script>";
+        // header("location:../main.php?success=1 Question updated!");
         
     }
     
@@ -36,10 +39,14 @@
             $query = "UPDATE `questions` SET `question` = '$question' WHERE `question_id` = '$question_id';";
             $stmt = mysqli_query($conn,$query);
             if(!$stmt){
-                header("location:../main.php?error=Something wrong!");
+                echo "<script>window.location.href='../main.php?error=Something wrong!';</script>";
+
+                // header("location:../main.php?error=Something wrong!");
             }
         }
             mysqli_close($conn);
-            header("location:../main.php?success=All questions updated!");
+            echo "<script>window.location.href='../main.php?success=All questions updated!';</script>";
+
+            // header("location:../main.php?success=All questions updated!");
         }
 ?>

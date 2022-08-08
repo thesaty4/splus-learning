@@ -13,6 +13,7 @@
      mysqli_stmt_bind_param($stmt,'iss',$id,$num_rating,$review);
      mysqli_stmt_execute($stmt);
      mysqli_stmt_close($stmt);
-     header("location:../index.php?success= Thanks for giving your review!#review ");
+     echo "<script>window.location.href='../index.php?success= Thanks for giving your review!#review ';</script>";
+    //  header("location:../index.php?success= Thanks for giving your review!#review ");
  }
 ?>
