@@ -1,7 +1,7 @@
 # Splus-Learing (Online Examination) 
 In this website you can do exam of any topic. Topics and question answer are controlled by Admin.
 
-LIVE AT : https://tinyurl.com/3sxpkkvr
+LIVE AT : https://splus-learning.000webhostapp.com/
 
 # USER PANEL
 1. Main Home Page.
@@ -64,7 +64,7 @@ This Project made for Online Examination, Actually when i was doing A-Level from
 
 Thank Uhhh.
 
-For better experience Signup @ https://dipankarsolution.tech/splus/php/login-signup/login-signup.php?signup
+For better experience Signup @ https://splus-learning.000webhostapp.com/php/login-signup/login-signup.php?signup
 
 
 
